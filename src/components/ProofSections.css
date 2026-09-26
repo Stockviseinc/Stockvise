@@ -1,0 +1,110 @@
+.proof-section { padding: 100px 0; }
+.proof-section .section-heading { margin-bottom: 44px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Numbers */
+.numbers-section { background: #f8f9f5; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #dde2d8; border-bottom: 1px solid #dde2d8; margin-bottom: 36px; }
+.stat-row > div { display: flex; flex-direction: column; gap: 8px; padding: 26px 24px 24px; }
+.stat-row > div + div { border-left: 1px solid #dde2d8; }
+.stat-row strong { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 42px; letter-spacing: -1.5px; line-height: 1; color: #244334; font-variant-numeric: tabular-nums; }
+.stat-row small { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0; margin-left: 3px; color: #6b8a57; }
+.stat-row span { font-size: 11px; line-height: 1.6; color: #768077; max-width: 190px; }
+
+.cost-model { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); border: 1px solid #dde2d8; border-radius: 14px; background: #fff; overflow: hidden; }
+.cost-controls { display: flex; flex-direction: column; gap: 12px; padding: 32px; background: #f0f3eb; border-right: 1px solid #dde2d8; }
+.cost-controls .eyebrow { color: #688060; margin-bottom: 6px; }
+.cost-controls label { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 12px; color: #4c574e; margin-top: 8px; }
+.cost-controls output { font-family: 'DM Serif Display', Georgia, serif; font-size: 24px; color: #244334; font-variant-numeric: tabular-nums; }
+.cost-controls input[type='range'] { width: 100%; accent-color: #244334; margin: 0; height: 24px; }
+.cost-funnel { list-style: none; margin: 18px 0 0; padding: 18px 0 0; border-top: 1px solid #dbe2d3; display: flex; flex-direction: column; gap: 11px; }
+.cost-funnel li { display: flex; align-items: center; gap: 10px; font-size: 12px; color: #5d6a5f; }
+.cost-funnel svg { color: #6b8a57; }
+.cost-funnel strong { color: #244334; font-weight: 650; font-variant-numeric: tabular-nums; }
+
+.cost-chart { display: flex; flex-direction: column; gap: 18px; padding: 32px; }
+.cost-chart .eyebrow { color: #688060; }
+.cost-bars { display: flex; flex-direction: column; gap: 22px; }
+.cost-bar-label { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 9px; font-size: 12px; color: #4c574e; }
+.cost-bar-label strong { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 26px; color: #244334; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cost-bar-label small { font-family: 'DM Sans', sans-serif; font-size: 11px; color: #768077; margin-left: 2px; }
+.cost-track { display: flex; gap: 2px; height: 22px; background: #f0f3eb; border-radius: 4px; overflow: hidden; }
+.cost-bar { display: block; height: 100%; transition: width .35s ease; }
+.cost-bar:first-child { border-radius: 4px 0 0 4px; }
+.cost-bar:last-child { border-radius: 0 4px 4px 0; }
+.cost-bar-naive { background: #c9cfc1; }
+.cost-bar-triage { background: #9fc27a; }
+.cost-bar-us { background: #244334; }
+.cost-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 11px; color: #5d6a5f; font-variant-numeric: tabular-nums; }
+.cost-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.cost-legend i { width: 10px; height: 10px; border-radius: 2px; }
+.cost-key-triage { background: #9fc27a; }
+.cost-key-us { background: #244334; }
+.cost-headline { display: flex; gap: 11px; align-items: flex-start; margin-top: auto; padding: 16px 18px; background: #eef5df; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #3e5040; }
+.cost-headline svg { color: #4f7040; margin-top: 2px; }
+.cost-headline strong { color: #244334; font-weight: 650; }
+.cost-assumptions { font-size: 10px; line-height: 1.7; color: #8a9285; }
+
+/* Comparison */
+.compare-section { background: #f0f3eb; border-top: 1px solid #e3e8dc; border-bottom: 1px solid #e3e8dc; }
+.compare-scroll { overflow-x: auto; border: 1px solid #dde2d8; border-radius: 14px; background: #fff; }
+.compare-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12px; }
+.compare-table th, .compare-table td { padding: 18px 16px; border-bottom: 1px solid #e8ece3; text-align: center; vertical-align: middle; }
+.compare-table tbody tr:last-child > * { border-bottom: 0; }
+.compare-table thead th { font-size: 12px; font-weight: 600; color: #4c574e; padding-block: 20px; }
+.compare-table tbody th { text-align: left; width: 34%; }
+.compare-table tbody th strong { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #263b30; margin-bottom: 4px; }
+.compare-table tbody th span { display: block; font-size: 11px; font-weight: 400; color: #7d877c; line-height: 1.55; }
+.compare-us { background: #f4f8ec; }
+.compare-table thead .compare-us { background: #244334; color: #f8f9f5; border-radius: 0; }
+.compare-us-name { font-size: 16px; font-weight: 650; letter-spacing: -.6px; }
+.compare-us-name span { color: #c5dea0; }
+.compare-mark { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.compare-yes .compare-mark { background: #e3efcf; color: #2f5226; }
+.compare-partial .compare-mark { background: #f3ecd9; color: #7a5d1c; }
+.compare-no .compare-mark { background: #f1f2ee; color: #8a8f86; }
+.compare-highlight > * { background: #fbfdf6; }
+.compare-highlight > .compare-us { background: #e9f3d6; }
+.compare-highlight th strong svg { color: #4f7040; }
+.compare-footnote { margin: 16px 0 0; font-size: 10px; line-height: 1.7; color: #8a9285; max-width: 760px; }
+
+.compare-evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+.forum-quote { margin: 0; padding: 34px; background: #244334; color: #e6eee0; border-radius: 14px; display: flex; flex-direction: column; gap: 16px; }
+.forum-quote > svg { color: #c5dea0; }
+.forum-quote .eyebrow { color: #b4c9a6; }
+.forum-quote blockquote { margin: 0; font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; line-height: 1.3; letter-spacing: -.5px; color: #f8f9f5; }
+.forum-quote mark { background: #d9edb2; color: #203c30; padding: 0 4px; border-radius: 3px; }
+.forum-quote figcaption { display: flex; gap: 14px; font-size: 11px; color: #a9bd9c; }
+.forum-quote figcaption span + span::before { content: '·'; margin-right: 14px; }
+.forum-quote p { color: #c9d6c0; font-size: 13px; line-height: 1.7; }
+.forum-quote .text-link { align-self: flex-start; color: #f8f9f5; border-color: #6d8a5d; }
+
+.moat { padding: 34px; border: 1px solid #dde2d8; border-radius: 14px; background: #fff; display: flex; flex-direction: column; gap: 16px; }
+.moat .eyebrow { color: #688060; }
+.moat h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 28px; letter-spacing: -.6px; line-height: 1.2; color: #203c30; text-wrap: balance; }
+.moat-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.moat-compare > div { padding: 18px; border-radius: 10px; background: #f4f5f1; }
+.moat-compare > .moat-us { background: #eef5df; }
+.moat-compare span { display: block; font-size: 10px; color: #7d877c; letter-spacing: .3px; }
+.moat-compare strong { display: block; margin: 5px 0 10px; font-size: 14px; font-weight: 650; color: #263b30; }
+.moat-compare ul { margin: 0; padding-left: 16px; font-size: 12px; line-height: 1.8; color: #5d6a5f; }
+.moat > p { font-size: 13px; color: #4c574e; }
+
+@media (max-width: 900px) {
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-row > div:nth-child(3) { border-left: 0; }
+  .stat-row > div:nth-child(n+3) { border-top: 1px solid #dde2d8; }
+  .cost-model { grid-template-columns: 1fr; }
+  .cost-controls { border-right: 0; border-bottom: 1px solid #dde2d8; }
+  .compare-evidence { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .proof-section { padding: 72px 0; }
+  .proof-section .section-heading { margin-bottom: 32px; }
+  .stat-row > div { padding: 20px 14px; }
+  .stat-row strong { font-size: 32px; }
+  .cost-controls, .cost-chart, .forum-quote, .moat { padding: 22px; }
+  .cost-bar-label { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .forum-quote blockquote { font-size: 22px; }
+  .moat-compare { grid-template-columns: 1fr; }
+}
