@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Check, Minus, X, Brain, Quote, Mail, ScanLine, Sparkles, Boxes } from 'lucide-react';
+import { ArrowUpRight, Check, Minus, X, Quote, Mail, ScanLine, Sparkles, Boxes } from 'lucide-react';
 import './ProofSections.css';
 
 const vendors = ['Stockvise', 'Katana', 'ReplenishRadar', 'Unicommerce', 'Sellbrite'];
@@ -18,13 +18,13 @@ const ValueIcon = { yes: Check, partial: Minus, no: X };
 export function Comparison({ openDemo }) {
   return <section id="compare" className="proof-section compare-section" aria-labelledby="compare-heading">
     <div className="section-container">
-      <div className="section-heading reveal"><div><span className="eyebrow"><span className="tiny-star">✳</span> HOW WE COMPARE</span><h2 id="compare-heading">Plenty of tools sync stock.<br/>None of them <em>remember.</em></h2></div><p>Stockvise isn’t a sync tool or a forecasting<br className="desktop-break"/> dashboard. Here’s where the difference is.</p></div>
+      <div className="section-heading reveal"><div><span className="eyebrow">HOW WE COMPARE</span><h2 id="compare-heading">Plenty of tools sync stock.<br/>None of them <em>remember.</em></h2></div><p>Stockvise isn’t a sync tool or a forecasting<br className="desktop-break"/> dashboard. Here’s where the difference is.</p></div>
 
       <div className="compare-scroll reveal" role="region" aria-label="Feature comparison table" tabIndex={0}>
         <table className="compare-table">
           <thead><tr><th scope="col"><span className="visually-hidden">Capability</span></th>{vendors.map((vendor, i) => <th scope="col" key={vendor} className={i === 0 ? 'compare-us' : ''}>{i === 0 ? <span className="compare-us-name">stockvise<span>.</span></span> : vendor}</th>)}</tr></thead>
           <tbody>{rows.map((row) => <tr key={row.label} className={row.highlight ? 'compare-highlight' : ''}>
-            <th scope="row"><strong>{row.highlight && <Brain size={14} aria-hidden="true"/>}{row.label}</strong><span>{row.note}</span></th>
+            <th scope="row"><strong>{row.highlight && <span aria-hidden="true">🧠</span>}{row.label}</strong></th>
             {row.values.map((value, i) => { const Icon = ValueIcon[value]; return <td key={vendors[i]} className={`${i === 0 ? 'compare-us' : ''} compare-${value}`}><span className="compare-mark"><Icon size={13} strokeWidth={2.4} aria-hidden="true"/>{valueLabel[value]}</span></td>; })}
           </tr>)}</tbody>
         </table>
@@ -37,18 +37,9 @@ export function Comparison({ openDemo }) {
           <span className="eyebrow">WHAT SELLERS ASKED FOR</span>
           <blockquote>A seller on a public forum asked for a <mark>“reorder / do-not-reorder list”</mark> that carries forward from one decision to the next.</blockquote>
           <figcaption><span>Seller forum post</span><span>Research note #17</span></figcaption>
-          <p>That’s Stockvise’s seller memory, almost word for word. Mark a color as do-not-reorder once, and every future recommendation for it respects that call.</p>
+          <p>That’s Stockvise’s seller memory, almost word for word.</p>
           <button className="text-link" onClick={() => openDemo('digest', 'sage')}>See a do-not-reorder item in the demo <ArrowUpRight size={16}/></button>
         </figure>
-        <div className="moat reveal">
-          <span className="eyebrow">WHY IT’S HARD TO COPY</span>
-          <h3>Memory is a data model, not a feature.</h3>
-          <div className="moat-compare">
-            <div><span>Most inventory tools store</span><strong>Current state</strong><ul><li>Stock today</li><li>Sales today</li><li>Reorder point today</li></ul></div>
-            <div className="moat-us"><span>Stockvise stores</span><strong>Decisions and outcomes</strong><ul><li>What we recommended, and why</li><li>What you chose</li><li>What happened next</li></ul></div>
-          </div>
-          <p>Copying our wording takes an afternoon. Rebuilding a data model around outcomes takes a rewrite.</p>
-        </div>
       </div>
     </div>
   </section>;
@@ -75,14 +66,7 @@ export function CostModel() {
 
   return <section id="numbers" className="proof-section numbers-section" aria-labelledby="numbers-heading">
     <div className="section-container">
-      <div className="section-heading reveal"><div><span className="eyebrow"><span className="tiny-star">✳</span> THE NUMBERS BEHIND IT</span><h2 id="numbers-heading">Cost grows with problems.<br/>Not with <em>SKU count.</em></h2></div><p>Cheap triage checks every product. Deep<br className="desktop-break"/> investigation runs only where it’s needed.</p></div>
-
-      <div className="stat-row reveal">
-        <div><strong>&lt;500<small>ms</small></strong><span>Jev triage per SKU, every SKU, every day</span></div>
-        <div><strong>$0.04</strong><span>per million tokens for triage</span></div>
-        <div><strong>~3<small>%</small></strong><span>of a catalog flagged on a typical day</span></div>
-        <div><strong>1</strong><span>email a day, one action per item</span></div>
-      </div>
+      <div className="section-heading reveal"><div><span className="eyebrow">THE NUMBERS BEHIND IT</span><h2 id="numbers-heading">Cost grows with problems.<br/>Not with <em>SKU count.</em></h2></div><p>Cheap triage checks every product. Deep<br className="desktop-break"/> investigation runs only where it’s needed.</p></div>
 
       <div className="cost-model reveal">
         <div className="cost-controls">
@@ -110,7 +94,7 @@ export function CostModel() {
             </div>
           </div>
           <div className="cost-legend"><span><i className="cost-key-triage"/>Triage on all SKUs · {money(triage)}</span><span><i className="cost-key-us"/>Investigations · {money(investigation)}</span></div>
-          <p className="cost-headline"><Boxes size={18} aria-hidden="true"/><span><strong>{ratio >= 10 ? Math.round(ratio) : ratio.toFixed(1)}× cheaper</strong> than sending every SKU to an LLM. Drag the SKU slider: the Stockvise bar barely moves.</span></p>
+          <p className="cost-headline"><Boxes size={18} aria-hidden="true"/><span><strong>{ratio >= 10 ? Math.round(ratio) : ratio.toFixed(1)}× cheaper</strong> than running an LLM on every SKU.</span></p>
           <p className="cost-assumptions">Illustrative model. Assumes about {TRIAGE_TOKENS_PER_SKU} tokens per SKU for triage at $0.04 per million, about ${INVESTIGATION_COST.toFixed(2)} per investigation, and {DAYS} daily runs a month.</p>
         </div>
       </div>

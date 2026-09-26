@@ -6,7 +6,7 @@ const STORAGE_KEY = 'stockvise-demo-memory-v1';
 const sampleItems = {
   tote: {
     name: 'Canvas Everyday Tote', sku: 'FF-TOTE-01', shortName: 'Everyday Tote', icon: ShoppingBag,
-    flag: 'Running low', eyebrow: 'Stockout risk', badge: '8 days of stock',
+    flag: 'Running low', eyebrow: '📦 Stockout risk', badge: '8 days of stock',
     intro: 'Your bestseller is moving faster than your next delivery.',
     explanation: 'You have 86 totes across Shopify and Amazon. At 10.8 sales a day, that is about 8 days of cover. Your supplier usually needs 12 days — something you told us last time.',
     recommendation: 'Plan a reorder of 180 totes.',
@@ -29,7 +29,7 @@ const sampleItems = {
   },
   mug: {
     name: 'Ceramic Everyday Mug', sku: 'FF-MUG-02', shortName: 'Everyday Mug', icon: Coffee,
-    flag: 'A spike, with a reason', eyebrow: 'Demand spike', badge: 'Promotion explained',
+    flag: 'A spike, with a reason', eyebrow: '📈 Demand spike', badge: 'Promotion explained',
     intro: 'The mugs are having a moment. We checked why.',
     explanation: 'You sold 64 mugs this week, up from 32 in the previous week. Your 20% email promotion started on Monday, which lines up with the lift. Current stock still covers the 10-day supplier lead time.',
     recommendation: 'Keep your current reorder plan.',
@@ -52,7 +52,7 @@ const sampleItems = {
   },
   sage: {
     name: 'Canvas Everyday Tote · Sage', sku: 'FF-TOTE-01-SG', shortName: 'Sage Tote', icon: Tag,
-    flag: 'Time to let it go', eyebrow: 'Dead stock', badge: '118 days of cover',
+    flag: 'Time to let it go', eyebrow: '🏷️ Markdown', badge: '118 days of cover',
     intro: 'The sage totes are staying on the shelf. You already decided they aren’t coming back.',
     explanation: 'There are 142 sage totes across both stores, and 36 sold in the last 30 days. At 1.2 a day, that is about 118 days of cover. You put sage on your do-not-reorder list in August, so this stock only needs to sell through.',
     recommendation: 'Mark down sage totes by 20%.',
@@ -75,7 +75,7 @@ const sampleItems = {
   },
   pouch: {
     name: 'Linen Market Pouch', sku: 'FF-POUCH-03', shortName: 'Market Pouch', icon: Package,
-    flag: 'Quiet, but not forgotten', eyebrow: 'Slow-moving stock', badge: '2 sales in 30 days',
+    flag: 'Quiet, but not forgotten', eyebrow: '💤 Snooze', badge: '2 sales in 30 days',
     intro: 'These pouches are waiting for their next chapter.',
     explanation: 'There are 96 pouches across your two stores, with only 2 sold in the last 30 days. You mentioned that their relaunch is waiting on new packaging, due in early October.',
     recommendation: 'Snooze this item for 14 days.',

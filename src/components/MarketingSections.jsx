@@ -6,7 +6,7 @@ import './MarketingSections.css'
 const featured = {
   brand: <span className="client-form">form <i>&amp;</i> field</span>,
   category: 'EVERYDAY ESSENTIALS · 140 SKUS',
-  quote: '“Our supplier quietly went from 7 days to 12. I mentioned it once. Two weeks later the digest told me to reorder totes a week earlier than I would have, and it said that note was the reason. We didn’t run out once all summer.”',
+  quote: '“I mentioned our supplier’s new 12-day lead time once. The digest used it two weeks later, and we didn’t run out all summer.”',
   name: 'Alex Taylor',
   role: 'Founder, Form & Field',
   initials: 'AT',
@@ -21,28 +21,28 @@ const stories = [
   {
     brand: <span className="client-ever"><span>◒</span> everday</span>,
     category: 'HOME GOODS · 420 SKUS',
-    quote: '“Shopify said we were fine and Amazon said we were nearly out. Seeing one number per product ended the Monday reconciliation for good.”',
+    quote: '“One number per product ended our Monday reconciliation.”',
     name: 'Priya Nair', role: 'Head of Operations, Everday', initials: 'PN', color: 'sage', rating: 5,
     metric: { value: '5 hrs', label: 'saved every week' },
   },
   {
     brand: <span className="client-wild">WILDROOT<span>GOODS FOR SLOWER LIVING</span></span>,
     category: 'WELLNESS · 260 SKUS',
-    quote: '“It flagged a retired scent sitting in two warehouses and suggested a 20% markdown, based on how our last clearance went. It sold through in five weeks.”',
+    quote: '“It suggested a 20% markdown on a retired scent. Sold through in five weeks.”',
     name: 'Marcus Bell', role: 'Founder, Wildroot', initials: 'MB', color: 'sand', rating: 5,
     metric: { value: '$11.4k', label: 'dead stock cleared' },
   },
   {
     brand: <span className="client-grove">grove<span>®</span></span>,
     category: 'KITCHEN · 900 SKUS',
-    quote: '“A sales spike used to mean a panic order. Now the email tells me it’s my own weekend promo and to hold off. That one line saved us from overbuying twice.”',
+    quote: '“It told me the spike was our own promo. That saved two panic orders.”',
     name: 'Hana Okafor', role: 'COO, Grove', initials: 'HO', color: 'clay', rating: 5,
     metric: { value: '2', label: 'panic orders avoided' },
   },
   {
     brand: <span className="client-north">NORTH<span>&amp;</span>COMMON</span>,
     category: 'APPAREL · 1,300 SKUS',
-    quote: '“We keep a do-not-reorder list for discontinued colors. Every other tool kept nagging us to restock them. Stockvise remembered after the first time.”',
+    quote: '“Other tools kept nagging us to restock retired colors. Stockvise remembered.”',
     name: 'Tom Reyes', role: 'Co-founder, North & Common', initials: 'TR', color: 'sage', rating: 4,
     metric: { value: '0', label: 'reorder nags on retired SKUs' },
   },
@@ -58,21 +58,10 @@ const plans = [
   { name: 'Scale', monthly: 179, yearly: 143, skus: '5,000', description: 'For more products, with less noise.', featured: false },
 ]
 
-const sharedFeatures = [
-  'Shopify + Amazon, together',
-  'Daily email with clear next steps',
-  'Investigations you can follow',
-  'Memory that learns your context',
-]
-
 const questions = [
   {
     question: 'Which sales channels does Stockvise support?',
     answer: 'Stockvise is designed for sellers running Shopify and Amazon. It connects matching products to one internal SKU, so stock and sales can be understood together. Other sales channels are outside the first version.',
-  },
-  {
-    question: 'Do I need to check another dashboard?',
-    answer: 'Your daily digest arrives by email with the items that need attention, the reason, and one recommended next step for each. Open “See the reasoning” whenever you want the supporting details. There is no dashboard to keep checking.',
   },
   {
     question: 'What does Stockvise remember?',
@@ -81,10 +70,6 @@ const questions = [
   {
     question: 'Will it place orders or change my inventory?',
     answer: 'You make the final call. Stockvise investigates and recommends; it does not place purchase orders, change prices, run promotions, or adjust inventory. Recording a decision in the digest helps it understand what you chose.',
-  },
-  {
-    question: 'What does setup look like?',
-    answer: 'The planned setup connects Shopify and Amazon, confirms which channel listings belong to the same SKU, and adds your supplier details and notes. This interactive preview uses sample data, so you can explore the full experience without connecting a store.',
   },
   {
     question: 'How do I choose a plan?',
@@ -104,11 +89,6 @@ export default function MarketingSections({ onStart }) {
             <p className="marketing-eyebrow">CUSTOMER STORIES</p>
             <h2 id="stories-heading">Fewer stockouts. Fewer <em>spreadsheets.</em></h2>
             <p className="marketing-section-intro">Five brands, five different problems, one morning email.</p>
-          </div>
-          <div className="story-summary">
-            <div><strong>4.8<small>/5</small></strong><span>average rating from pilot sellers</span></div>
-            <div><strong>−71%</strong><span>fewer stockouts in the first quarter</span></div>
-            <div><strong>5.2 hrs</strong><span>saved per seller, per week</span></div>
           </div>
           <article className="story-featured">
             <div className="story-featured-copy">
@@ -173,12 +153,12 @@ export default function MarketingSections({ onStart }) {
                   <button type="button" className="pricing-button" onClick={() => onStart(plan.name)}>Explore {plan.name}<ArrowUpRight size={17} aria-hidden="true" /></button>
                   <div className="pricing-features">
                     <p className="pricing-sku"><strong>Up to {plan.skus} SKUs</strong><span>across both channels</span></p>
-                    <ul>{sharedFeatures.map((feature) => <li key={feature}><Check size={15} strokeWidth={1.8} aria-hidden="true" />{feature}</li>)}</ul>
                   </div>
                 </article>
               )
             })}
           </div>
+          <p className="pricing-includes">Every plan includes Shopify + Amazon sync, the daily digest, investigations and seller memory.</p>
           <p className="pricing-footnote">Concept pricing for this preview. Explore any plan with sample data — no payment required.</p>
         </div>
       </section>
