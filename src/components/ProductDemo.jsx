@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, CheckCheck, ChevronRight, Clock3, Coffee, Database, Leaf, Mail, MessageSquareText, Package, Search, ShieldCheck, ShoppingBag, Sparkles, Tag, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, CheckCheck, ChevronRight, Clock3, Coffee, Database, Mail, MessageSquareText, Package, Search, ShieldCheck, ShoppingBag, Sparkles, Tag, X } from 'lucide-react';
 import './ProductDemo.css';
 
 const STORAGE_KEY = 'stockvise-demo-memory-v1';
 const sampleItems = {
   tote: {
     name: 'Canvas Everyday Tote', sku: 'FF-TOTE-01', shortName: 'Everyday Tote', icon: ShoppingBag,
-    flag: 'Running a little low', eyebrow: 'Stockout risk', badge: '8 days of stock',
+    flag: 'Running low', eyebrow: 'Stockout risk', badge: '8 days of stock',
     intro: 'Your bestseller is moving faster than your next delivery.',
     explanation: 'You have 86 totes across Shopify and Amazon. At 10.8 sales a day, that is about 8 days of cover. Your supplier usually needs 12 days — something you told us last time.',
     recommendation: 'Plan a reorder of 180 totes.',
@@ -197,7 +197,7 @@ export default function ProductDemo({ open, onClose, initialView = 'digest', ini
     <dialog ref={dialogRef} className="demo-dialog" aria-labelledby="demo-title" onCancel={(event) => { event.preventDefault(); onClose(); }} onClick={dismissBackdrop}>
       <div className="demo-shell">
         <header className="demo-toolbar">
-          <div className="demo-wordmark"><Leaf size={22} strokeWidth={1.5} aria-hidden="true" />stockvise<span className="demo-wordmark-dot">.</span></div>
+          <div className="demo-wordmark"><svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 24V13l8-5v16M19 24V5l8 5v14" stroke="currentColor" strokeWidth="4.4" strokeLinecap="round" strokeLinejoin="round" /></svg>stockvise<span className="demo-wordmark-dot">.</span></div>
           <span id="demo-title" className="demo-mode"><span />Interactive demo</span>
           <button type="button" className="demo-close" onClick={onClose} aria-label="Close product demo"><X size={20} /></button>
         </header>
@@ -220,8 +220,8 @@ export default function ProductDemo({ open, onClose, initialView = 'digest', ini
           <div className="demo-content" ref={scrollRef}>
             {view === 'digest' && <article className="demo-view demo-email">
               <div className="demo-email-meta"><span>STOCKVISE DAILY</span><time>Tue, 22 Sep · 8:04 AM</time></div>
-              <h2>A little heads-up<br />for your Tuesday.</h2>
-              <p className="demo-email-greeting">Morning, Alex. We checked both stores.<br />Here’s one less thing to keep in your head.</p>
+              <h2>Four calls<br />for Tuesday.</h2>
+              <p className="demo-email-greeting">Morning, Alex. We checked 128 SKUs across both stores.<br />These four need a decision.</p>
               <div className="demo-email-rule"><span>{String(Object.keys(sampleItems).indexOf(selected) + 1).padStart(2, '0')} / {String(Object.keys(sampleItems).length).padStart(2, '0')}</span><i /><span className="demo-alert-label">{item.eyebrow}</span></div>
               <div className="demo-product-heading"><span className={`demo-product-icon demo-product-large demo-product-${selected}`}><ProductIcon size={27} strokeWidth={1.35} /></span><div><h3>{item.name}</h3><span>{item.sku}</span></div><span className="demo-status-pill">{item.badge}</span></div>
               <h4>{item.intro}</h4>
@@ -231,7 +231,7 @@ export default function ProductDemo({ open, onClose, initialView = 'digest', ini
               <div className="demo-recommendation"><span className="demo-recommendation-icon"><ArrowUpRight /></span><div><span className="demo-overline">OUR RECOMMENDATION</span><h4>{item.recommendation}</h4><p>{item.recommendationDetail}</p></div></div>
               <div className="demo-email-actions"><button type="button" className="demo-primary-button" onClick={() => setView('review')}>{decision ? 'Review saved decision' : item.action}<ArrowRight size={16} /></button><button type="button" className="demo-text-button" onClick={() => setView('trace')}>See how we got here<ChevronRight size={15} /></button></div>
               {decision && <p className="demo-saved-inline"><Check size={14} />{decision.label} · saved in this browser</p>}
-              <div className="demo-memory-hint"><MessageSquareText size={17} /><p><strong>A little context goes a long way.</strong> Reply with what you know. We’ll carry it into the next recommendation.</p><button type="button" onClick={() => setView('trace')}>Add a note<ArrowRight size={13} /></button></div>
+              <div className="demo-memory-hint"><MessageSquareText size={17} /><p><strong>Know something we don’t?</strong> Reply with what you know. We’ll carry it into the next recommendation.</p><button type="button" onClick={() => setView('trace')}>Add a note<ArrowRight size={13} /></button></div>
             </article>}
 
             {view === 'trace' && <article className="demo-view demo-trace">
@@ -262,7 +262,7 @@ export default function ProductDemo({ open, onClose, initialView = 'digest', ini
             </article>}
 
             {view === 'confirmed' && <article className="demo-view demo-confirmed">
-              <span className="demo-confirmed-icon"><Check size={36} strokeWidth={1.4} /></span><span className="demo-overline">A LITTLE SMARTER FOR NEXT TIME</span><h2>{item.confirmation}.</h2><p>Your decision is now part of the sample history for <strong>{item.name}</strong>.</p><p className="demo-confirmed-detail">{storageAvailable ? 'It will still be here when you reopen this demo in the same browser.' : 'It is saved for this session. Browser storage is unavailable.'}</p>
+              <span className="demo-confirmed-icon"><Check size={36} strokeWidth={1.4} /></span><span className="demo-overline">SAVED TO MEMORY</span><h2>{item.confirmation}.</h2><p>Your decision is now part of the sample history for <strong>{item.name}</strong>.</p><p className="demo-confirmed-detail">{storageAvailable ? 'It will still be here when you reopen this demo in the same browser.' : 'It is saved for this session. Browser storage is unavailable.'}</p>
               <button type="button" className="demo-primary-button" onClick={() => setView('trace')}>View product memory<ArrowRight size={16} /></button><button type="button" className="demo-text-button" onClick={() => setView('digest')}>Back to your digest</button>
             </article>}
           </div>

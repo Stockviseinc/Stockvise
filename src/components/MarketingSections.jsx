@@ -101,9 +101,9 @@ export default function MarketingSections({ onStart }) {
       <section className="marketing-stories marketing-section" id="customers" aria-labelledby="stories-heading">
         <div className="marketing-container">
           <div className="marketing-section-heading story-heading">
-            <p className="marketing-eyebrow">BUILT AROUND YOUR DAY</p>
-            <h2 id="stories-heading">Small teams. A little more <em>headspace.</em></h2>
-            <p className="marketing-section-intro">For the people doing the buying, the packing, and everything in between.</p>
+            <p className="marketing-eyebrow">CUSTOMER STORIES</p>
+            <h2 id="stories-heading">Fewer stockouts. Fewer <em>spreadsheets.</em></h2>
+            <p className="marketing-section-intro">Five brands, five different problems, one morning email.</p>
           </div>
           <div className="story-summary">
             <div><strong>4.8<small>/5</small></strong><span>average rating from pilot sellers</span></div>
@@ -151,8 +151,8 @@ export default function MarketingSections({ onStart }) {
       <section className="marketing-pricing marketing-section" id="pricing" aria-labelledby="pricing-heading">
         <div className="marketing-container">
           <div className="marketing-section-heading">
-            <p className="marketing-eyebrow">LESS BUSYWORK. MORE BUSINESS.</p>
-            <h2 id="pricing-heading">A clear head. At a <em>clear price.</em></h2>
+            <p className="marketing-eyebrow">PRICING</p>
+            <h2 id="pricing-heading">Priced by SKU count. <em>Nothing else.</em></h2>
             <p className="marketing-section-intro">The same thoughtful intelligence on every plan. Just choose your catalog size.</p>
           </div>
           <div className="pricing-billing-row">
@@ -186,9 +186,9 @@ export default function MarketingSections({ onStart }) {
       <section className="marketing-faq marketing-section" aria-labelledby="faq-heading">
         <div className="marketing-container faq-layout">
           <div className="faq-heading">
-            <p className="marketing-eyebrow">A FEW GOOD QUESTIONS</p>
-            <h2 id="faq-heading">A little more<br /><em>clarity.</em></h2>
-            <p>Good decisions start with knowing what to expect.</p>
+            <p className="marketing-eyebrow">FAQ</p>
+            <h2 id="faq-heading">Before you<br /><em>ask.</em></h2>
+            <p>The six things sellers ask first.</p>
             <button type="button" className="faq-demo-link" onClick={() => onStart('Demo')}>Take a look inside <ArrowUpRight size={16} aria-hidden="true" /></button>
           </div>
           <div className="faq-list">
@@ -208,9 +208,9 @@ export default function MarketingSections({ onStart }) {
       <section className="marketing-final-cta" aria-labelledby="final-cta-heading">
         <div className="marketing-container marketing-final-inner">
           <div className="marketing-cta-icon" aria-hidden="true"><Mail size={26} strokeWidth={1.4} /><span><Check size={12} strokeWidth={2.5} /></span></div>
-          <p className="marketing-eyebrow">YOUR NEXT GOOD DECISION STARTS HERE</p>
-          <h2 id="final-cta-heading">One email. A calmer <em>morning.</em></h2>
-          <p>Let Stockvise connect the dots.<br />You get back to building the brand.</p>
+          <p className="marketing-eyebrow">EARLY ACCESS</p>
+          <h2 id="final-cta-heading">See your first <em>digest.</em></h2>
+          <p>Walk through four sample alerts<br />and the reasoning behind each one.</p>
           <button type="button" className="marketing-cta-button" onClick={() => onStart('Demo')}>Meet your inventory agent<ArrowRight size={18} aria-hidden="true" /></button>
           <span className="marketing-cta-note">An interactive preview. No store connection needed.</span>
         </div>
@@ -219,11 +219,11 @@ export default function MarketingSections({ onStart }) {
       <footer className="marketing-footer">
         <div className="marketing-container">
           <div className="footer-top">
-            <div className="footer-brand-area"><Logo /><p>Your stock, understood.</p></div>
+            <div className="footer-brand-area"><Logo /><p>Inventory intelligence for Shopify + Amazon sellers.</p></div>
             <nav className="footer-nav" aria-label="Footer navigation"><a href="#product">The product</a><a href="#how-it-works">How it works</a><a href="#memory">Memory</a><a href="#compare">Compare</a><a href="#numbers">Cost model</a><a href="#customers">Customers</a><a href="#pricing">Pricing</a></nav>
             <button type="button" className="footer-demo-button" onClick={() => onStart('Demo')}>Take it for a spin <ArrowUpRight size={17} aria-hidden="true" /></button>
           </div>
-          <div className="footer-bottom"><span>© {new Date().getFullYear()} Stockvise. A product concept.</span><span>Thoughtful inventory. Human decisions.</span></div>
+          <div className="footer-bottom"><span>© {new Date().getFullYear()} Stockvise. A product concept.</span><span>Recommends. Never auto-executes.</span></div>
         </div>
       </footer>
     </>

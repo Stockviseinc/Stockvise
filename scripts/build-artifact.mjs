@@ -9,7 +9,7 @@ const html = `<title>Stockvise</title>
 <meta name="description" content="Stockvise, the inventory intelligence agent for Shopify and Amazon sellers. One thoughtful email, clear recommendations, and a memory that grows with your business.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>${css}</style>
 <div id="root"></div>
 <script type="module">${js}</script>

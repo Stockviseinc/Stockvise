@@ -1,0 +1,196 @@
+/* Stockroom theme: shipping-label stock, kraft board, racking blue, stencil-wide type.
+   Loaded after every component stylesheet so it wins the cascade. */
+:root {
+  --ink: #17181c;
+  --ink-2: #3f4047;
+  --muted: #5f5d57;
+  --page: #f4f4f1;
+  --concrete: #e6e5e0;
+  --label: #ffffff;
+  --line: #d3d2cc;
+  --kraft: #cbb38a;
+  --kraft-deep: #a98d5d;
+  --blue: #1f46c4;
+  --blue-deep: #16338f;
+  --blue-tint: #e6ebf8;
+  --red: #c7381f;
+  --display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-family: var(--display);
+  color: var(--ink);
+  background: var(--page);
+}
+body { background: var(--page); color: var(--ink); }
+::selection { background: var(--blue); color: #fff; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+p { color: var(--ink-2); }
+
+/* Headlines: expanded, heavy, uppercase. Emphasis is a colour change, never italics. */
+h1, h2, .marketing-section h2, .marketing-final-cta h2 {
+  font-family: var(--display); font-stretch: 125%; font-weight: 800; text-transform: uppercase;
+  letter-spacing: -0.025em; line-height: 0.98; color: var(--ink); text-wrap: balance;
+}
+h2, .marketing-section h2 { font-size: clamp(30px, 3.5vw, 46px); }
+h1 em, h2 em, .hero h1 em, .memory-copy h2 em, .marketing-section h2 em, .marketing-final-cta h2 em { font-style: normal; font-weight: inherit; color: var(--blue); }
+.memory-copy h2 { font-size: clamp(36px, 4.4vw, 60px); }
+.shopify svg { color: var(--ink); stroke: var(--kraft); }
+h3 { font-stretch: 110%; letter-spacing: -0.01em; }
+
+/* Mono labels: the printed-label layer of the page. */
+.eyebrow, .marketing-eyebrow, .feature-number, .step-number, .sample-label, .workflow-meta, .alert-eyebrow,
+.client-strip-heading, .days-tag, .story-brand-category, .pricing-recommended, .pricing-billed, .footer-bottom,
+.demo-overline, .demo-step-number, .demo-step-source, .demo-email-meta, .demo-status-pill, .demo-alert-label,
+.demo-trace-eyebrow, .story-metric-chip, .compare-mark, .cost-legend, .product-caption, .event-label, .form-note,
+.story-disclosure, .compare-footnote, .cost-assumptions, .pricing-footnote, .marketing-cta-note, .email-date {
+  font-family: var(--mono); font-stretch: 100%;
+}
+.eyebrow, .marketing-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--ink); gap: 8px; }
+.tiny-star { display: none; }
+.section-heading .eyebrow, .memory-copy .eyebrow { font-size: 11px; }
+
+/* Section headers read like a manifest: heavy rule, left aligned. */
+.section-heading { border-top: 3px solid var(--ink); padding-top: 18px; align-items: flex-end; }
+.section-heading > div { min-width: 0; flex: 1 1 auto; }
+.section-heading > p { font-size: 14px; color: var(--ink-2); max-width: 340px; }
+.marketing-section-heading, .marketing-section-heading.story-heading, .marketing-pricing .marketing-section-heading {
+  text-align: left; max-width: none; margin-left: 0; margin-right: 0; border-top: 3px solid var(--ink); padding-top: 18px;
+}
+.marketing-section-intro { margin-left: 0; font-size: 14px; color: var(--ink-2); }
+.pricing-billing-row { justify-content: flex-start; }
+
+/* Buttons: racking blue, square shoulders. */
+.button { border-radius: 2px; font-size: 13px; font-weight: 650; letter-spacing: 0.01em; }
+.button-dark, .marketing-cta-button, .demo-primary-button { background: var(--blue); border-color: var(--blue); color: #fff; }
+.button-dark:hover, .marketing-cta-button:hover, .demo-primary-button:hover { background: var(--blue-deep); box-shadow: none; }
+.button-outline { border: 2px solid var(--ink); }
+.text-link { border-bottom: 2px solid var(--ink); font-weight: 650; font-size: 13px; }
+.nav-demo, .desktop-nav a { font-size: 13px; color: var(--ink); font-weight: 500; }
+
+/* Header */
+.site-header { background: var(--page); backdrop-filter: none; border-bottom: 2px solid var(--ink); }
+.brand { color: var(--ink); font-stretch: 112%; font-weight: 800; letter-spacing: -0.04em; }
+.brand-period { color: var(--blue); }
+
+/* Hero: a shipping label on kraft board. */
+.hero { background: var(--kraft); border-bottom: 2px solid var(--ink); }
+.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .35; background-image: repeating-linear-gradient(90deg, transparent 0 22px, #b89d6e 22px 23px); }
+.hero-inner { position: relative; }
+.hero h1 { font-size: clamp(44px, 5.4vw, 76px); line-height: .95; letter-spacing: -0.035em; color: var(--ink); }
+.hero-copy > p { color: #2c2a24; font-size: 16px; line-height: 1.6; max-width: 440px; }
+.hero-eyebrow { color: var(--ink); }
+.hero-reassurance, .hero-platforms { color: #2c2a24; }
+.hero-reassurance { font-family: var(--mono); font-size: 12px; }
+.button-plain { color: var(--ink); font-weight: 650; }
+.play-icon { background: var(--ink); color: var(--kraft); }
+.hero-product::before { display: none; }
+.email-preview { border: 2px solid var(--ink); border-radius: 2px; box-shadow: 8px 8px 0 var(--ink); transform: rotate(-1deg); }
+.email-chrome { background: var(--ink); color: #e9e7e0; border-bottom: 0; font-family: var(--mono); font-size: 11px; }
+.email-chrome .chrome-dots i { background: #5a5b60; }
+.email-alert { background: var(--label); border: 2px solid var(--ink); border-radius: 0; }
+.alert-eyebrow { color: var(--red); font-size: 11px; font-weight: 600; }
+.risk-dot, .status-dot { background: var(--red); }
+.days-tag { background: #fbe3dd; color: var(--red); border-radius: 0; font-size: 11px; font-weight: 600; }
+.recommendation { background: var(--blue-tint); border-radius: 0; color: var(--ink-2); border-left: 3px solid var(--blue); }
+.recommendation svg, .trace-link { color: var(--blue); }
+.sample-label { background: var(--ink); color: #fff; border-radius: 0; font-size: 10px; letter-spacing: .06em; padding: 3px 6px; }
+.memory-float { border: 2px solid var(--ink); border-radius: 2px; box-shadow: 5px 5px 0 var(--ink); }
+.memory-float-icon { background: var(--blue); color: #fff; border-radius: 2px; }
+.product-caption { color: #2c2a24; font-size: 11px; }
+.email-sender .sender-avatar { background: var(--ink); color: #fff; border-radius: 2px; }
+
+/* Client strip */
+.client-strip { background: var(--ink); border: 0; }
+.client-strip-heading { color: #bdbab1; font-size: 11px; }
+.client-strip-heading > span:last-child { color: #8f8c84; font-size: 11px; }
+.client-logos { color: #e9e7e0; }
+
+/* Feature and workflow blocks */
+.feature { border-top: 3px solid var(--ink); }
+.feature-number { color: var(--blue); font-size: 11px; font-weight: 600; letter-spacing: .06em; }
+.feature-icon { background: var(--ink); color: #fff; border-radius: 2px; }
+.feature-visual { border-radius: 0; }
+.workflow-section, .compare-section, .marketing-stories { background: var(--concrete); }
+.workflow-panel { background: var(--label); border: 2px solid var(--ink); border-radius: 0; }
+.workflow-step.active { background: var(--label); outline: 2px solid var(--ink); outline-offset: -2px; color: var(--ink); }
+.step-number { color: var(--blue); font-weight: 600; }
+.workflow-meta { background: var(--ink); color: #fff; border-radius: 0; }
+
+/* Memory story card */
+.memory-story { border: 2px solid var(--ink); border-radius: 0; box-shadow: 8px 8px 0 var(--kraft); transform: none; }
+.memory-story mark, .memory-event mark { background: var(--blue-tint); color: var(--ink); }
+.event-point { background: var(--ink); color: #fff; border-radius: 2px; }
+
+/* Quiet banner and final CTA on kraft */
+.quiet-banner { background: var(--blue); }
+.quiet-banner h3, .quiet-banner p, .quiet-banner .quiet-icon { color: #fff; }
+.quiet-banner h3 { font-family: var(--display); font-stretch: 118%; font-weight: 750; }
+.quiet-banner .button-outline { border-color: #fff; color: #fff; }
+.marketing-final-cta { background: var(--kraft); border-top: 2px solid var(--ink); text-align: left; }
+.marketing-final-cta .marketing-final-inner { display: grid; justify-items: start; }
+.marketing-final-cta p:not(.marketing-eyebrow), .marketing-cta-note { color: #2c2a24; }
+.marketing-cta-icon { margin: 0 0 22px; transform: none; border: 2px solid var(--ink); border-radius: 2px; background: var(--label); color: var(--ink); }
+
+/* Stories, pricing, comparison, cost model */
+.story-item, .story-featured, .pricing-plan, .compare-scroll, .cost-model, .moat { border: 2px solid var(--ink); border-radius: 0; }
+.story-featured .story-metrics, .forum-quote, .pricing-plan-featured { background: var(--ink); border-color: var(--ink); }
+.forum-quote { border-radius: 0; }
+.story-featured blockquote, .forum-quote blockquote { font-stretch: 105%; font-weight: 650; letter-spacing: -0.01em; text-transform: none; }
+.story-stars .star-on { color: var(--ink); fill: var(--ink); }
+.story-metric-chip { border-radius: 0; background: var(--blue-tint); }
+.pricing-recommended, .forum-quote mark { background: var(--kraft); color: var(--ink); border-radius: 0; }
+.pricing-plan-featured .pricing-button { background: var(--blue); border-color: var(--blue); color: #fff; }
+.pricing-button { border: 2px solid var(--ink); border-radius: 2px; }
+.pricing-toggle { border-radius: 0; border: 2px solid var(--ink); background: var(--label); }
+.pricing-toggle button { border-radius: 0; font-size: 12px; }
+.pricing-toggle button.pricing-toggle-active { background: var(--ink); color: #fff; box-shadow: none; }
+.pricing-toggle button.pricing-toggle-active span { color: var(--kraft); }
+.compare-table thead .compare-us { background: var(--blue); }
+.compare-us-name span, .forum-quote > svg { color: var(--kraft); }
+.compare-mark { border-radius: 0; }
+.compare-partial .compare-mark { background: #f5ead2; color: #6e4d0c; }
+.cost-controls { background: var(--concrete); }
+.cost-controls input[type='range'] { accent-color: var(--blue); }
+.cost-bar-us { background: var(--blue); }
+.cost-key-us { background: var(--blue); }
+.cost-headline { border-radius: 0; background: var(--blue-tint); border-left: 3px solid var(--blue); }
+.stat-row { border-top: 3px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.stat-row strong, .cost-controls output, .cost-bar-label strong, .story-summary strong, .story-metric strong, .pricing-price span:first-child {
+  font-stretch: 125%; font-weight: 800; letter-spacing: -0.03em;
+}
+
+/* Footer, dialogs */
+.marketing-footer { background: var(--ink); color: #e9e7e0; }
+.marketing-footer .brand, .footer-nav a, .footer-demo-button { color: #f4f4f1; }
+.footer-brand-area p, .footer-bottom { color: #a9a69d; }
+.footer-bottom { border-top-color: #3a3b40; font-size: 11px; }
+.start-dialog { background: var(--label); border: 2px solid var(--ink); border-radius: 0; box-shadow: 10px 10px 0 var(--ink); }
+.demo-dialog { border: 2px solid var(--ink); border-radius: 0; }
+.demo-store-monogram { font-family: var(--display); font-stretch: 125%; font-weight: 800; }
+.demo-status-pill { border-radius: 0; }
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: clamp(38px, 11vw, 52px); }
+  h2, .marketing-section h2 { font-size: clamp(28px, 8vw, 36px); }
+  .section-heading { flex-direction: column; align-items: flex-start; }
+  .email-preview { box-shadow: 5px 5px 0 var(--ink); }
+}
+
+/* Fixes after first render */
+.feature-icon { display: none; }
+.workflow-meta { display: inline-block; padding: 7px 11px; font-size: 11px; line-height: 1.4; }
+.pricing-description, .pricing-sku, .pricing-features li { font-size: 12px; }
+.pricing-sku span { font-size: 11px; }
+.pricing-plan-featured .pricing-sku strong { color: #fff; }
+.pricing-plan-featured .pricing-billed, .pricing-plan-featured .pricing-sku span, .pricing-plan-featured .pricing-description { color: #bdbab1; }
+.pricing-billed { color: var(--muted); font-size: 11px; }
+.pricing-footnote, .story-disclosure, .compare-footnote, .cost-assumptions { font-size: 11px; color: var(--muted); }
+.forum-quote figcaption, .story-metric s, .pricing-plan-featured .pricing-billed { color: #bdbab1; }
+.pricing-plan-featured .pricing-features .pricing-sku strong { color: #fff; }
+.avatar-small { color: #5b4a38; }
+.demo-toolbar, .demo-footer { background: var(--page); }
+.demo-toolbar { border-bottom: 2px solid var(--ink); }
+.demo-wordmark { font-stretch: 112%; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); }
+.demo-wordmark-dot { color: var(--blue); }
+.demo-footer { font-family: var(--mono); font-size: 11px; }
+.demo-stats strong { font-stretch: 125%; font-weight: 800; letter-spacing: -0.03em; }
+.demo-recommendation { border-radius: 0; border-left: 3px solid var(--blue); }
