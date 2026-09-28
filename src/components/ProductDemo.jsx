@@ -6,9 +6,9 @@ const STORAGE_KEY = 'stockvise-demo-memory-v1';
 const sampleItems = {
   tote: {
     name: 'Canvas Everyday Tote', sku: 'FF-TOTE-01', shortName: 'Everyday Tote', icon: ShoppingBag,
-    flag: 'Running low', eyebrow: '📦 Stockout risk', badge: '8 days of stock',
+    flag: 'Running low', eyebrow: 'Stockout risk', badge: '8 days of stock',
     intro: 'Your bestseller is moving faster than your next delivery.',
-    explanation: 'You have 86 totes across Shopify and Amazon. At 10.8 sales a day, that is about 8 days of cover. Your supplier usually needs 12 days — something you told us last time.',
+    explanation: 'You have 86 totes across Shopify and Amazon. At 10.8 sales a day, that is about 8 days of cover. Your supplier usually needs 12 days, as you told us last time.',
     recommendation: 'Plan a reorder of 180 totes.',
     recommendationDetail: 'Ask your supplier for delivery within 8 days. A standard 12-day delivery would leave a gap of about 4 days.',
     action: 'Review reorder plan', confirm: 'Mark reorder as planned', confirmation: 'Reorder marked as planned',
@@ -20,16 +20,16 @@ const sampleItems = {
     typedFlag: 'STOCKOUT_RISK', confidence: '96%',
     trace: [
       { title: 'Start with the whole picture', detail: 'One internal SKU matches 54 available units on Shopify and 32 on Amazon: 86 totes in total. Sample sales and inventory were last checked at 08:00.', source: 'Shopify + Amazon', icon: Database },
-      { title: 'Check the everyday maths', detail: 'The recent 14-day sales rate is 10.8 units a day. 86 ÷ 10.8 gives 7.96 days of cover — less than the 12 days needed for your next delivery.', source: 'Observed sales velocity · no forecast model', icon: Clock3 },
+      { title: 'Check the everyday maths', detail: 'The recent 14-day sales rate is 10.8 units a day. 86 ÷ 10.8 gives 7.96 days of cover, less than the 12 days needed for your next delivery.', source: 'Observed sales velocity · no forecast model', icon: Clock3 },
       { title: 'Choose what needs a closer look', detail: 'Jev returns a typed STOCKOUT_RISK flag with 96% sample confidence. This exception is passed to the investigation step.', source: 'Typed triage · 96% confidence', icon: ShieldCheck },
       { title: 'Find out what changed', detail: 'No active tote promotion explains the sales rate. The recent change is within the usual seasonal range. The real issue is the gap between available stock and supplier lead time.', source: 'Promotion calendar · seasonal history · supplier records', icon: Search },
       { title: 'Remember your last call', detail: 'Your supplier lists 7 days. Your note says the last two orders took 12 days, so this recommendation uses 12. Your experience changes the decision.', source: 'Seller memory · 12 September', icon: MessageSquareText },
-      { title: 'Make one useful recommendation', detail: 'Reorder 180 units, taking current stock plus the planned order to 266 — about 24.6 days at the observed rate. Request delivery within 8 days to avoid the roughly 4-day gap.', source: 'Recommendation · you decide what happens next', icon: CheckCheck },
+      { title: 'Make one useful recommendation', detail: 'Reorder 180 units, taking current stock plus the planned order to 266, about 24.6 days at the observed rate. Request delivery within 8 days to avoid the roughly 4-day gap.', source: 'Recommendation · you decide what happens next', icon: CheckCheck },
     ],
   },
   mug: {
     name: 'Ceramic Everyday Mug', sku: 'FF-MUG-02', shortName: 'Everyday Mug', icon: Coffee,
-    flag: 'A spike, with a reason', eyebrow: '📈 Demand spike', badge: 'Promotion explained',
+    flag: 'A spike, with a reason', eyebrow: 'Demand spike', badge: 'Promotion explained',
     intro: 'The mugs are having a moment. We checked why.',
     explanation: 'You sold 64 mugs this week, up from 32 in the previous week. Your 20% email promotion started on Monday, which lines up with the lift. Current stock still covers the 10-day supplier lead time.',
     recommendation: 'Keep your current reorder plan.',
@@ -52,7 +52,7 @@ const sampleItems = {
   },
   sage: {
     name: 'Canvas Everyday Tote · Sage', sku: 'FF-TOTE-01-SG', shortName: 'Sage Tote', icon: Tag,
-    flag: 'Time to let it go', eyebrow: '🏷️ Markdown', badge: '118 days of cover',
+    flag: 'Time to let it go', eyebrow: 'Markdown', badge: '118 days of cover',
     intro: 'The sage totes are staying on the shelf. You already decided they aren’t coming back.',
     explanation: 'There are 142 sage totes across both stores, and 36 sold in the last 30 days. At 1.2 a day, that is about 118 days of cover. You put sage on your do-not-reorder list in August, so this stock only needs to sell through.',
     recommendation: 'Mark down sage totes by 20%.',
@@ -75,7 +75,7 @@ const sampleItems = {
   },
   pouch: {
     name: 'Linen Market Pouch', sku: 'FF-POUCH-03', shortName: 'Market Pouch', icon: Package,
-    flag: 'Quiet, but not forgotten', eyebrow: '💤 Snooze', badge: '2 sales in 30 days',
+    flag: 'Quiet, but not forgotten', eyebrow: 'Snooze', badge: '2 sales in 30 days',
     intro: 'These pouches are waiting for their next chapter.',
     explanation: 'There are 96 pouches across your two stores, with only 2 sold in the last 30 days. You mentioned that their relaunch is waiting on new packaging, due in early October.',
     recommendation: 'Snooze this item for 14 days.',

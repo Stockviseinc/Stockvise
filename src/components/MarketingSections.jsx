@@ -159,7 +159,7 @@ export default function MarketingSections({ onStart }) {
             })}
           </div>
           <p className="pricing-includes">Every plan includes Shopify + Amazon sync, the daily digest, investigations and seller memory.</p>
-          <p className="pricing-footnote">Concept pricing for this preview. Explore any plan with sample data — no payment required.</p>
+          <p className="pricing-footnote">Concept pricing for this preview. Explore any plan with sample data. No payment required.</p>
         </div>
       </section>
 

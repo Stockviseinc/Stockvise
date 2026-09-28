@@ -24,7 +24,7 @@ export function Comparison({ openDemo }) {
         <table className="compare-table">
           <thead><tr><th scope="col"><span className="visually-hidden">Capability</span></th>{vendors.map((vendor, i) => <th scope="col" key={vendor} className={i === 0 ? 'compare-us' : ''}>{i === 0 ? <span className="compare-us-name">stockvise<span>.</span></span> : vendor}</th>)}</tr></thead>
           <tbody>{rows.map((row) => <tr key={row.label} className={row.highlight ? 'compare-highlight' : ''}>
-            <th scope="row"><strong>{row.highlight && <span aria-hidden="true">🧠</span>}{row.label}</strong></th>
+            <th scope="row"><strong>{row.label}</strong></th>
             {row.values.map((value, i) => { const Icon = ValueIcon[value]; return <td key={vendors[i]} className={`${i === 0 ? 'compare-us' : ''} compare-${value}`}><span className="compare-mark"><Icon size={13} strokeWidth={2.4} aria-hidden="true"/>{valueLabel[value]}</span></td>; })}
           </tr>)}</tbody>
         </table>
